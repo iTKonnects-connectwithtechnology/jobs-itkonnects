@@ -1,12 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import Data from './Data';
+import { Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home";
+import Navbar from "./Components/Navbar";
+import AddJob from "./Pages/AddJob";
+import  { Toaster } from 'react-hot-toast';
+
 
 function App() {
   return (
-    <div className="App">
-      <Data/>
-    </div>
+    <>
+    <Navbar/>
+   <Toaster/>
+    <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path="/add-job" element={<AddJob/>}/>
+
+        </Routes>
+    </>
+
   );
 }
 
